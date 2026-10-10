@@ -28,6 +28,55 @@ FALLBACK_MIN_LEXICAL = 0.75
 
 
 # ==================================================
+# CONCEPT HINTS
+# ==================================================
+
+CONCEPT_HINTS = {
+    "General Aircraft Dimensions": {
+        "dimensions",
+        "dimension",
+        "wingspan",
+        "wing span",
+        "aircraft length",
+        "overall length",
+        "aircraft height",
+        "overall height",
+        "aircraft width",
+        "overall width",
+        "length of the aircraft",
+        "height of the aircraft",
+        "width of the aircraft",
+    }
+}
+
+
+def get_concept_hint_score(query, concept):
+    """
+    Returns a concept relevance score between 0.0 and 1.0.
+
+    This is intentionally conservative: it only boosts a concept
+    when the user's question contains terminology strongly associated
+    with that concept.
+    """
+
+    if not concept:
+        return 0.0
+
+    normalized_query = normalize_text(query)
+
+    hints = CONCEPT_HINTS.get(concept, set())
+
+    if not hints:
+        return 0.0
+
+    for hint in hints:
+        if hint in normalized_query:
+            return 1.0
+
+    return 0.0
+
+
+# ==================================================
 # COSINE DISTANCE
 # ==================================================
 
@@ -91,12 +140,12 @@ def qa_retrieve(
 
     results = collection.query(
         query_embeddings=[question_embedding],
-        n_results=top_k,
+        n_results=max(top_k * 4, 20),
         where={
             "$and": [
                 {"aircraft_id": aircraft_id},
                 {"document_id": document_id},
-                {"content_type": "concept"}
+                
             ]
         }
     )
@@ -125,7 +174,11 @@ def qa_retrieve(
             "concept_index": metadata.get("concept_index"),
             "chunk_index": metadata.get("chunk_index"),
             "content_type": metadata.get("content_type"),
-            "distance": distances[i]
+            "distance": distances[i],
+            "concept_hint_score": get_concept_hint_score(
+                query,
+                metadata.get("concept")
+            )
 
         }
 
@@ -147,14 +200,38 @@ def qa_retrieve(
     for chunk in chunks:
 
         if chunk["distance"] <= MAX_DISTANCE:
+
+            semantic_score = 1.0 - chunk["distance"]
+
+            lexical_score = lexical_coverage(
+                query,
+                chunk["text"]
+            )
+
+            concept_score = chunk["concept_hint_score"]
+
+            final_score = (
+                semantic_score * 0.55
+                + lexical_score * 0.15
+                + concept_score * 0.30
+            )
+
+            chunk["lexical_score"] = lexical_score
+            chunk["final_score"] = final_score
+
             strict_chunks.append(chunk)
+
+    strict_chunks.sort(
+        key=lambda chunk: chunk["final_score"],
+        reverse=True
+    )
 
     # --------------------------------------------------
     # 4. STRICT SEARCH WORKED
     # --------------------------------------------------
 
     if strict_chunks:
-        return strict_chunks
+        return strict_chunks[:top_k]
 
     # --------------------------------------------------
     # 5. STRICT FAILED
@@ -192,7 +269,6 @@ def fallback_retrieve(
             "$and": [
                 {"aircraft_id": aircraft_id},
                 {"document_id": document_id},
-                {"content_type": "concept"}
             ]
         },
         include=[
@@ -289,6 +365,16 @@ def fallback_retrieve(
             lexical_score
         )
 
+        concept_hint_score = get_concept_hint_score(
+            query,
+            metadata.get("concept")
+        )
+
+        final_score = (
+            fallback_score * 0.70
+            + concept_hint_score * 0.30
+        )
+
         # ----------------------------------------------
         # BUILD CANDIDATE
         # ----------------------------------------------
@@ -308,7 +394,9 @@ def fallback_retrieve(
             "content_type": metadata.get("content_type"),
             "distance": distance,
             "lexical_score": lexical_score,
-            "fallback_score": fallback_score
+            "fallback_score": fallback_score,
+            "concept_hint_score": concept_hint_score,
+            "final_score": final_score
 
         }
 
@@ -326,7 +414,7 @@ def fallback_retrieve(
     # --------------------------------------------------
 
     candidates.sort(
-        key=lambda candidate: candidate["fallback_score"],
+        key=lambda candidate: candidate["final_score"],
         reverse=True
     )
 
