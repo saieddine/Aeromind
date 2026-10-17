@@ -1,40 +1,81 @@
+
+import logging
+
 from fastapi import APIRouter, HTTPException
+from fastapi.concurrency import run_in_threadpool
 
 from ..schemas.chat import ChatRequest, ChatResponse
-from ..services.rag_service import get_rag_service
 
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api", tags=["chat"])
 
 
 @router.post("/chat", response_model=ChatResponse)
-def chat(request: ChatRequest):
-    if request.method.lower() != "rag":
+async def chat(request: ChatRequest):
+    method = request.method.lower().strip()
+
+    if not request.question.strip():
         raise HTTPException(
             status_code=400,
-            detail="Only method='rag' is available in this RAG integration.",
+            detail="Question cannot be empty.",
+        )
+
+    if method not in {"rag", "lightrag", "graphrag"}:
+        raise HTTPException(
+            status_code=400,
+            detail="Unsupported RAG method.",
+        )
+
+    if method == "graphrag":
+        raise HTTPException(
+            status_code=501,
+            detail="GraphRAG is not available yet.",
         )
 
     try:
-        service = get_rag_service()
+        if method == "lightrag":
+            # Import only when LightRAG is requested.
+            from LighRag.lightrag_service import ask
 
-        result = service.answer(
-            aircraft_id=request.aircraft_id,
-            question=request.question,
-            document_id=request.document_id,
-            conversation_history=[],
-        )
+            result = await ask(
+                aircraft_id=request.aircraft_id,
+                question=request.question,
+                conversation_id=request.conversation_id or "",
+                mode="hybrid",
+            )
 
-        if request.conversation_id:
-            result["metadata"]["conversation_id"] = request.conversation_id
+        else:
+            # Preserve Seif's existing normal RAG implementation.
+            from ..services.rag_service import get_rag_service
+
+            service = get_rag_service()
+
+            result = await run_in_threadpool(
+                service.answer,
+                aircraft_id=request.aircraft_id,
+                question=request.question,
+                document_id=request.document_id,
+                conversation_history=[],
+            )
+
+            if request.conversation_id:
+                result["metadata"]["conversation_id"] = (
+                    request.conversation_id
+                )
 
         return result
 
     except ValueError as exc:
-        raise HTTPException(status_code=400, detail=str(exc)) from exc
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid chat request.",
+        ) from exc
 
-    except Exception as exc:
+    except Exception:
+        logger.exception("Chat request failed")
         raise HTTPException(
             status_code=500,
-            detail=f"RAG request failed: {exc}",
-        ) from exc
+            detail="The chat service encountered an error.",
+        )

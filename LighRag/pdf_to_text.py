@@ -3,7 +3,7 @@ from pathlib import Path
 from pypdf import PdfReader
 
 BASE = Path(__file__).resolve().parent.parent          # the Airbus folder
-PDF = BASE / "data" / "AC_A320_0624.pdf"
+PDF = next((BASE / "data").rglob("AC_A320_0624.pdf"))
 
 def extract(out_name, first=1, last=None):
     reader = PdfReader(PDF)

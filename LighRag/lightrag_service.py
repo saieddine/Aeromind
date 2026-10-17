@@ -1,46 +1,108 @@
-import re
+
 import time
+from pathlib import Path
+
 from lightrag import QueryParam
-from rag_factory import get_rag
+
+if __package__:
+    from .rag_factory import get_rag
+else:
+    from rag_factory import get_rag
+
 
 _instances = {}
+
 
 async def _get_instance(aircraft_id: str):
     if aircraft_id not in _instances:
         _instances[aircraft_id] = await get_rag(aircraft_id)
     return _instances[aircraft_id]
 
-def _split_answer_and_sources(raw_text: str):
-    if raw_text is None:
-        return "No answer returned.", []
-    marker = "### References"
 
-    if marker not in raw_text:
-        return raw_text.strip(), []
-    answer_part, refs_part = raw_text.split(marker, 1)
+def _extract_sources(data: dict) -> list[dict]:
+    """Build source records from actual retrieved document chunks."""
+    chunks = data.get("chunks") or []
     sources = []
-    for line in refs_part.strip().splitlines():
-        line = line.strip()
-        if not line.startswith("*") and not line.startswith("-"):
-            continue
-        text = re.sub(r"^\*?\s*\[\d+\]\s*", "", line).strip("* -").strip()
-        if text:
-            sources.append({"title": text})
-    return answer_part.strip(), sources
+    seen = set()
 
-async def ask(aircraft_id: str, question: str, conversation_id: str, mode: str = "hybrid"):
+    for chunk in chunks:
+        file_path = chunk.get("file_path")
+
+        if not file_path:
+            continue
+
+        title = Path(file_path).name
+
+        # Avoid duplicate document entries.
+        if title in seen:
+            continue
+
+        seen.add(title)
+        sources.append({"title": title})
+
+    return sources
+
+
+async def ask(
+    aircraft_id: str,
+    question: str,
+    conversation_id: str,
+    mode: str = "hybrid",
+):
+    if not isinstance(question, str) or not question.strip():
+        raise ValueError("Question cannot be empty.")
+
+    if mode not in {
+        "local", "global", "hybrid", "naive", "mix", "bypass"
+    }:
+        raise ValueError("Unsupported LightRAG query mode.")
+
+    start = time.perf_counter()
+
     rag = await _get_instance(aircraft_id)
-    start = time.time()
-    raw = await rag.aquery(question, param=QueryParam(mode=mode))
-    answer, sources = _split_answer_and_sources(raw)
-    if not sources:
-        sources = [{"title": f"A320 AC — {aircraft_id} hydraulics section"}]  # fallback placeholder
+
+    result = await rag.aquery_llm(
+        question,
+        param=QueryParam(
+            mode=mode,
+            enable_rerank=False,
+            include_references=True,
+            stream=False,
+        ),
+    )
+
+    if result.get("status") != "success":
+        raise RuntimeError(
+            result.get("message", "LightRAG query failed.")
+        )
+
+    llm_response = result.get("llm_response") or {}
+    answer = llm_response.get("content") or "No answer returned."
+
+    data = result.get("data") or {}
+    chunks = data.get("chunks") or []
+
+    sources = _extract_sources(data)
+
+    metadata = result.get("metadata") or {}
+    processing_info = metadata.get("processing_info") or {}
+
+    retrieved_chunks = processing_info.get("final_chunks_count")
+
+    if retrieved_chunks is None:
+        retrieved_chunks = len(chunks)
+
     return {
         "answer": answer,
         "sources": sources,
         "metadata": {
             "method": "lightrag",
+            "aircraft_id": aircraft_id,
+            "conversation_id": conversation_id,
             "mode": mode,
-            "latency_ms": int((time.time() - start) * 1000),
+            "retrieved_chunks": retrieved_chunks,
+            "latency_ms": int(
+                (time.perf_counter() - start) * 1000
+            ),
         },
     }
