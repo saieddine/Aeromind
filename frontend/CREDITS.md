@@ -18,7 +18,7 @@ The model file was renamed to `a320.glb` for integration into AeroMind.
 - **Model title:** CFM56-5B
 - **Creator:** CarlosCG31
 - **Original model page:** https://sketchfab.com/3d-models/cfm56-5b-6958dfcec16e453b989efe014ab00d64
-- **License:** Verify the exact Creative Commons license shown on the original Sketchfab listing before publishing this attribution.
+- **License:** CC BY 4.0
 
 The model was downloaded and integrated into AeroMind's 3D viewer.
 
