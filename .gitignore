@@ -52,3 +52,16 @@ dist/
 *.bak
 *.swp
 *~
+# Frontend dependencies
+frontend/node_modules/
+
+# Frontend build output
+frontend/dist/
+
+# Frontend local environment files
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Local backup files
+frontend/src/App.backup.jsx.txt
