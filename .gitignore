@@ -1,3 +1,4 @@
+
 # Environment & Secrets
 .env
 .env.*
@@ -22,6 +23,12 @@ ENV/
 # Chroma / Vector Storage
 chroma_storage/
 
+# LightRAG
+LighRag/.env
+rag_storage/
+graph_storage/
+recovery_backups/
+
 # IDE / Editor
 .vscode/
 .idea/
@@ -37,6 +44,9 @@ desktop.ini
 # Temporary Files
 *.tmp
 *.temp
+*.bak
+*.swp
+*~
 
 # Testing / Coverage
 .pytest_cache/
@@ -48,10 +58,6 @@ build/
 dist/
 *.egg-info/
 
-# Temporary editor files
-*.bak
-*.swp
-*~
 # Frontend dependencies
 frontend/node_modules/
 
