@@ -1,0 +1,579 @@
+{
+  "format_version": 1,
+  "directed": true,
+  "multigraph": true,
+  "nodes": [
+    {
+      "id": "d10149eecff30f56d9478bcd",
+      "name": "Aircraft",
+      "canonical_name": "aircraft"
+    },
+    {
+      "id": "340891da27916858d06d830f",
+      "name": "Cargo Compartments",
+      "canonical_name": "cargo compartments"
+    },
+    {
+      "id": "44b19e5b124c352e161b8904",
+      "name": "Locations and Dimensions",
+      "canonical_name": "locations and dimensions"
+    },
+    {
+      "id": "046ac31fad5f19a33760ec70",
+      "name": "Forward Passenger/Crew Doors",
+      "canonical_name": "forward passenger/crew doors"
+    },
+    {
+      "id": "0100c983d135586559dc04e1",
+      "name": "Clearances",
+      "canonical_name": "clearances"
+    },
+    {
+      "id": "bbf9cdb04c2cb0da511e5cfe",
+      "name": "Emergency Exits",
+      "canonical_name": "emergency exits"
+    },
+    {
+      "id": "ed7e6eddf97728acdd723e33",
+      "name": "Aft Passenger/Crew Doors",
+      "canonical_name": "aft passenger/crew doors"
+    },
+    {
+      "id": "8b312e091a53b4465e5fe565",
+      "name": "Aft Cargo Compartment Door",
+      "canonical_name": "aft cargo compartment door"
+    },
+    {
+      "id": "e4721f0f7eddab869aff9c8a",
+      "name": "Bulk Cargo Compartment Door",
+      "canonical_name": "bulk cargo compartment door"
+    },
+    {
+      "id": "834ecfb6139492ec51b9ed8a",
+      "name": "Main Landing Gear Doors",
+      "canonical_name": "main landing gear doors"
+    },
+    {
+      "id": "cc49aea6b42efcf7bd7c7522",
+      "name": "APU and Nose Landing Gear Doors",
+      "canonical_name": "apu and nose landing gear doors"
+    },
+    {
+      "id": "0acda352037893ce07758b4b",
+      "name": "2-8-0",
+      "canonical_name": "2-8-0"
+    },
+    {
+      "id": "844d60b3c16bf8966f870e09",
+      "name": "Escape Slides",
+      "canonical_name": "escape slides"
+    },
+    {
+      "id": "703ba546a3a64c14874dedde",
+      "name": "2-9-0",
+      "canonical_name": "2-9-0"
+    },
+    {
+      "id": "049cc06b17e7d4166b4a873e",
+      "name": "Landing Gear",
+      "canonical_name": "landing gear"
+    },
+    {
+      "id": "7b965e76570e8c2ad30ebf0d",
+      "name": "a320",
+      "canonical_name": "a320"
+    },
+    {
+      "id": "00eb5d5e6520d03875b6ad33",
+      "name": "CFM56 Series Engine",
+      "canonical_name": "cfm56 series engine"
+    },
+    {
+      "id": "6c94d7e1a8622c9deddc556c",
+      "name": "IAE V2500 Series Engine",
+      "canonical_name": "iae v2500 series engine"
+    },
+    {
+      "id": "678e5f14b72df218c73547a8",
+      "name": "PW 1100G Engine",
+      "canonical_name": "pw 1100g engine"
+    },
+    {
+      "id": "2ca6881cafaf8da776e76138",
+      "name": "CFM LEAP-1A Engine",
+      "canonical_name": "cfm leap-1a engine"
+    },
+    {
+      "id": "f82e9ee2af8bb3e10f714feb",
+      "name": "Typical Ramp Layout - Gate",
+      "canonical_name": "typical ramp layout - gate"
+    },
+    {
+      "id": "889393fb69a5b305188405f6",
+      "name": "figure",
+      "canonical_name": "figure"
+    },
+    {
+      "id": "cdf24cd6e4d79c24dd635fb9",
+      "name": "5-2-0",
+      "canonical_name": "5-2-0"
+    },
+    {
+      "id": "6f30e46f1b89d8f98da90aea",
+      "name": "Full Servicing Turn Round Time Chart",
+      "canonical_name": "full servicing turn round time chart"
+    },
+    {
+      "id": "86f92d9baa5590864b5b2e63",
+      "name": "5-3-0",
+      "canonical_name": "5-3-0"
+    },
+    {
+      "id": "196fd4891505ad4a884a857d",
+      "name": "Outstation Turn Round Time Chart",
+      "canonical_name": "outstation turn round time chart"
+    },
+    {
+      "id": "668b8deb11e61383dc84c883",
+      "name": "5-4-1",
+      "canonical_name": "5-4-1"
+    },
+    {
+      "id": "42d7ebf3622c0bca445bdffb",
+      "name": "Ground Service Connections Layout",
+      "canonical_name": "ground service connections layout"
+    },
+    {
+      "id": "8ceb7a6131619d840d0e8168",
+      "name": "May 01/14",
+      "canonical_name": "may 01/14"
+    },
+    {
+      "id": "6b23d80c552733b52c423686",
+      "name": "Ground Service Connections - Grounding (Earthing) Points - Landing Gear",
+      "canonical_name": "ground service connections - grounding (earthing) points - landing gear"
+    },
+    {
+      "id": "e194faea9f6511f20a19cd2a",
+      "name": "Ground Service Connections - Grounding (Earthing) Points - Wing",
+      "canonical_name": "ground service connections - grounding (earthing) points - wing"
+    },
+    {
+      "id": "b65dc87a0acf3010944d0926",
+      "name": "Ground Service Connections - Grounding (Earthing) Point - Avionics Compartment Door-Frame",
+      "canonical_name": "ground service connections - grounding (earthing) point - avionics compartment door-frame"
+    },
+    {
+      "id": "7d562d969d79a620effe83fa",
+      "name": "Ground Service Connections - Grounding (Earthing) Point - Engine Air Intake (If Installed)",
+      "canonical_name": "ground service connections - grounding (earthing) point - engine air intake (if installed)"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d10149eecff30f56d9478bcd",
+      "target": "340891da27916858d06d830f",
+      "key": 0,
+      "predicate": "has_cargo_compartments",
+      "evidence": "Cargo Compartments May 01/15",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "340891da27916858d06d830f",
+      "target": "44b19e5b124c352e161b8904",
+      "key": 0,
+      "predicate": "have_locations_and_dimensions",
+      "evidence": "FIGURE Cargo Compartments - Locations and Dimensions",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "046ac31fad5f19a33760ec70",
+      "target": "0100c983d135586559dc04e1",
+      "key": 0,
+      "predicate": "have_clearances",
+      "evidence": "FIGURE Doors Clearances - Forward Passenger/Crew Doors May 01/15",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "bbf9cdb04c2cb0da511e5cfe",
+      "target": "0100c983d135586559dc04e1",
+      "key": 0,
+      "predicate": "have_clearances",
+      "evidence": "FIGURE Doors Clearances - Emergency Exits May 01/15",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "ed7e6eddf97728acdd723e33",
+      "target": "0100c983d135586559dc04e1",
+      "key": 0,
+      "predicate": "have_clearances",
+      "evidence": "FIGURE Doors Clearances - Aft Passenger/Crew Doors May 01/15",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "8b312e091a53b4465e5fe565",
+      "target": "0100c983d135586559dc04e1",
+      "key": 0,
+      "predicate": "have_clearances",
+      "evidence": "FIGURE Doors Clearances - Aft Cargo Compartment Door May 01/15",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "e4721f0f7eddab869aff9c8a",
+      "target": "0100c983d135586559dc04e1",
+      "key": 0,
+      "predicate": "have_clearances",
+      "evidence": "FIGURE Doors Clearances - Bulk Cargo Compartment Door May 01/15",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "834ecfb6139492ec51b9ed8a",
+      "target": "0100c983d135586559dc04e1",
+      "key": 0,
+      "predicate": "have_clearances",
+      "evidence": "FIGURE Doors Clearances - Main Landing Gear Doors May 01/15",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "cc49aea6b42efcf7bd7c7522",
+      "target": "0100c983d135586559dc04e1",
+      "key": 0,
+      "predicate": "have_clearances",
+      "evidence": "FIGURE Doors Clearances - APU and Nose Landing Gear Doors L.E.C. Page 3 Jun 01/24",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_4",
+      "page": "5",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "0acda352037893ce07758b4b",
+      "target": "844d60b3c16bf8966f870e09",
+      "key": 0,
+      "predicate": "subject_covers",
+      "evidence": "Subject 2-8-0 Dec 01/18 Escape Slides",
+      "qualifier": "Dec 01/18",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_5",
+      "page": "6",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "703ba546a3a64c14874dedde",
+      "target": "049cc06b17e7d4166b4a873e",
+      "key": 0,
+      "predicate": "subject_covers",
+      "evidence": "Subject 2-9-0 Dec 01/23 Landing Gear",
+      "qualifier": "Dec 01/23",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_5",
+      "page": "6",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "7b965e76570e8c2ad30ebf0d",
+      "target": "00eb5d5e6520d03875b6ad33",
+      "key": 0,
+      "predicate": "equipped_with",
+      "evidence": "Power Plant Handling - Major Dimensions - CFM56 Series Engine",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_7",
+      "page": "8",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "7b965e76570e8c2ad30ebf0d",
+      "target": "6c94d7e1a8622c9deddc556c",
+      "key": 0,
+      "predicate": "equipped_with",
+      "evidence": "Power Plant Handling - Major Dimensions - IAE V2500 Series Engine",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_7",
+      "page": "8",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "7b965e76570e8c2ad30ebf0d",
+      "target": "678e5f14b72df218c73547a8",
+      "key": 0,
+      "predicate": "equipped_with",
+      "evidence": "Power Plant Handling - Major Dimensions - PW 1100G Engine",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_7",
+      "page": "8",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "7b965e76570e8c2ad30ebf0d",
+      "target": "2ca6881cafaf8da776e76138",
+      "key": 0,
+      "predicate": "equipped_with",
+      "evidence": "Power Plant Handling - Major Dimensions - CFM LEAP-1A Engine",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_7",
+      "page": "8",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "f82e9ee2af8bb3e10f714feb",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Typical Ramp Layout - Gate",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "f82e9ee2af8bb3e10f714feb",
+      "target": "cdf24cd6e4d79c24dd635fb9",
+      "key": 0,
+      "predicate": "has_subject_code",
+      "evidence": "Subject 5-2-0",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "6f30e46f1b89d8f98da90aea",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Full Servicing Turn Round Time Chart",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "6f30e46f1b89d8f98da90aea",
+      "target": "86f92d9baa5590864b5b2e63",
+      "key": 0,
+      "predicate": "has_subject_code",
+      "evidence": "Subject 5-3-0",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "196fd4891505ad4a884a857d",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Outstation Turn Round Time Chart",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "196fd4891505ad4a884a857d",
+      "target": "668b8deb11e61383dc84c883",
+      "key": 0,
+      "predicate": "has_subject_code",
+      "evidence": "Subject 5-4-1",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "42d7ebf3622c0bca445bdffb",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Ground Service Connections Layout",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "42d7ebf3622c0bca445bdffb",
+      "target": "8ceb7a6131619d840d0e8168",
+      "key": 0,
+      "predicate": "has_revision_date",
+      "evidence": "May 01/14 FIGURE Ground Service Connections Layout",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "6b23d80c552733b52c423686",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Ground Service Connections - Grounding (Earthing) Points - Landing Gear",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "e194faea9f6511f20a19cd2a",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Ground Service Connections - Grounding (Earthing) Points - Wing",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "b65dc87a0acf3010944d0926",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Ground Service Connections - Grounding (Earthing) Point - Avionics Compartment Door-Frame",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    },
+    {
+      "source": "7d562d969d79a620effe83fa",
+      "target": "889393fb69a5b305188405f6",
+      "key": 0,
+      "predicate": "is_a",
+      "evidence": "FIGURE Ground Service Connections - Grounding (Earthing) Point - Engine Air Intake (If Installed)",
+      "qualifier": "",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_14",
+      "page": "15",
+      "section": "",
+      "extraction_method": "openrouter_llm_v1",
+      "evidence_validated": true
+    }
+  ]
+}
