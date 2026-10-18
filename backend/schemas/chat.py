@@ -17,12 +17,16 @@ class ChatSource(BaseModel):
     chunk_id: str | None = None
 
 
+
 class ChatMetadata(BaseModel):
     method: str
     aircraft_id: str
     document_id: str | None = None
     retrieved_chunks: int = 0
     latency_ms: float
+    conversation_id: str | None = None
+    mode: str | None = None
+
 
 
 class ChatResponse(BaseModel):
