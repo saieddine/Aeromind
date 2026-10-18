@@ -52,3 +52,10 @@ dist/
 *.bak
 *.swp
 *~
+
+#LightRag
+LighRag/.env
+.venv/
+rag_storage/
+graph_storage/
+recovery_backups/

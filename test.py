@@ -6,7 +6,7 @@ from rag.retrieval.qa_retriever_aeromind import qa_retrieve
 AIRCRAFT_ID = "a320"
 DOCUMENT_ID = "a320_ac_0624"
 
-QUESTION = "What are the dimensions of the A320?"
+QUESTION = "What is the maximum aircraft length?"
 
 
 def main():
