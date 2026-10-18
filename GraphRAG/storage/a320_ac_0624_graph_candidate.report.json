@@ -1,0 +1,47 @@
+{
+  "chunks_processed": 449,
+  "catalogue_relations_accepted": 58,
+  "catalogue_relations_rejected": 1,
+  "rule_relations_added": 7,
+  "total_nodes": 84,
+  "total_edges": 65,
+  "llm_fallback_candidates": 438,
+  "llm_chunks_called": 0,
+  "llm_failures": 0,
+  "llm_budget": 100,
+  "output": "C:\\Users\\Sif eddine\\Desktop\\AeroMind\\AeroMind-Shared\\GraphRAG\\storage\\a320_ac_0624_graph_candidate.json",
+  "evidence_validation": "normalized_substring_v1",
+  "rejected_or_duplicate_records": 4,
+  "report_records": [
+    {
+      "status": "catalogue_rejected",
+      "subject": "Multifunctional runway light (MFRL)",
+      "predicate": "includes",
+      "object": "retractable landing light",
+      "page": "105",
+      "reason": "evidence_not_found_on_source_page"
+    },
+    {
+      "status": "catalogue_duplicate",
+      "subject": "IAE V2500 Series Engine",
+      "predicate": "has_labeled_danger_area_angle",
+      "object": "30 degrees",
+      "page": "347"
+    },
+    {
+      "status": "catalogue_duplicate",
+      "subject": "CFM LEAP-1A Engine",
+      "predicate": "has_labeled_danger_area_angle",
+      "object": "30 degrees",
+      "page": "348"
+    },
+    {
+      "status": "catalogue_duplicate",
+      "subject": "PW 1100G Engine",
+      "predicate": "has_labeled_danger_area_angle",
+      "object": "30 degrees",
+      "page": "349"
+    }
+  ],
+  "notes": "Candidate build only. Evidence must match source chunks; review candidate edges before promotion."
+}

@@ -1,0 +1,1656 @@
+{
+  "format_version": 1,
+  "directed": true,
+  "multigraph": true,
+  "nodes": [
+    {
+      "id": "049cc06b17e7d4166b4a873e",
+      "name": "Landing gear",
+      "canonical_name": "landing gear",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "5a84a51ebbba02f028d2ede3",
+      "name": "conventional retractable tricycle type",
+      "canonical_name": "conventional retractable tricycle type",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "018dcd14bbda2db026cd1a83",
+      "name": "two main gears with twin-wheel or four-wheel bogie assembly",
+      "canonical_name": "two main gears with twin-wheel or four-wheel bogie assembly",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "e3565c50170a5908200294b1",
+      "name": "twin-wheel nose gear",
+      "canonical_name": "twin-wheel nose gear",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "f4fc29a00002f1533983eb3f",
+      "name": "Main landing gears",
+      "canonical_name": "main landing gears",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "c047caef95b4d3e8d7f74cbe",
+      "name": "wing",
+      "canonical_name": "wing",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "55c2bbadc5bbca3575a88d61",
+      "name": "fuselage centerline",
+      "canonical_name": "fuselage centerline",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "aa3189e827cd81cb2481e043",
+      "name": "Nose landing gear",
+      "canonical_name": "nose landing gear",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "3fb87ed585006b59c28f96f4",
+      "name": "fuselage compartment located between FR9 and FR20",
+      "canonical_name": "fuselage compartment located between fr9 and fr20",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "5e0e0e2c91e18c2955684817",
+      "name": "Landing gears and landing gear doors",
+      "canonical_name": "landing gears and landing gear doors",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "6faca18e0d58a6d758fa7639",
+      "name": "electrical and hydraulic systems",
+      "canonical_name": "electrical and hydraulic systems",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "d4e3fc7b0477747da28f05c2",
+      "name": "gravity",
+      "canonical_name": "gravity",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "2bab5eb5ee9afde22cd7b1b9",
+      "name": "Each main landing gear assembly",
+      "canonical_name": "each main landing gear assembly",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "0c403ed97d27639276af0eaf",
+      "name": "conventional two-wheel direct type with integral shock absorber",
+      "canonical_name": "conventional two-wheel direct type with integral shock absorber",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "f22247f0624b51c6ac59b61e",
+      "name": "Main landing gear assembly",
+      "canonical_name": "main landing gear assembly",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "7bc62af75b7bcb71169e9796",
+      "name": "fixed drag strut",
+      "canonical_name": "fixed drag strut",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "78b183ddc37a34a3aa839bcb",
+      "name": "folding strut",
+      "canonical_name": "folding strut",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "f92bfc236f39985a29448210",
+      "name": "leg with built-in shock absorber strut",
+      "canonical_name": "leg with built-in shock absorber strut",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "59792d88c9a8f1de3093fab0",
+      "name": "twin wheels with adequate shimmy damping",
+      "canonical_name": "twin wheels with adequate shimmy damping",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "f968ac40df46babc61ab99cd",
+      "name": "Nose wheel steering",
+      "canonical_name": "nose wheel steering",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "a4902bc32a74bf1ca66cb35a",
+      "name": "two hand wheels in the cockpit",
+      "canonical_name": "two hand wheels in the cockpit",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "1b6a37ac03ce919cbf8b037b",
+      "name": "Steering disconnection box",
+      "canonical_name": "steering disconnection box",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "56a46eff0eae1d4060852c0d",
+      "name": "steering deactivation for towing",
+      "canonical_name": "steering deactivation for towing",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "86cd54d61872606dce549f6d",
+      "name": "Landing-gear shock absorbers",
+      "canonical_name": "landing-gear shock absorbers",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "cb14824b3017ecc25fa83a3c",
+      "name": "MIL-PRF-6164 standard valves",
+      "canonical_name": "mil-prf-6164 standard valves",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "9159e7f170d8ac61900da448",
+      "name": "nitrogen",
+      "canonical_name": "nitrogen",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "b8ef331c9132ee35a481593f",
+      "name": "Four main wheels",
+      "canonical_name": "four main wheels",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "b3cf725398da94d5eea7611b",
+      "name": "carbon multidisc brakes",
+      "canonical_name": "carbon multidisc brakes",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "d6fa72d0af24d3ba0585978b",
+      "name": "Braking system",
+      "canonical_name": "braking system",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "fe4621cce8f28c5e664646f0",
+      "name": "electrical control",
+      "canonical_name": "electrical control",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "7534f0bb32eb0a08d9c50f2c",
+      "name": "hydraulic operation",
+      "canonical_name": "hydraulic operation",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "11fffc23b6eef3cb40df389f",
+      "name": "four braking modes plus autobrake and anti-skid systems",
+      "canonical_name": "four braking modes plus autobrake and anti-skid systems",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "16f23598a83f13b7f2fb86f6",
+      "name": "normal braking with anti-skid capability",
+      "canonical_name": "normal braking with anti-skid capability",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "c65da0711f84af2ae1167558",
+      "name": "alternative braking with anti-skid capability",
+      "canonical_name": "alternative braking with anti-skid capability",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "b11f2c5abf08c4ff703f1306",
+      "name": "alternative braking without anti-skid capability",
+      "canonical_name": "alternative braking without anti-skid capability",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "b55a1a25120598a4084ab4f4",
+      "name": "parking brake with full pressure application capability only",
+      "canonical_name": "parking brake with full pressure application capability only",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "b5a6a7c522d00df77eb076e6",
+      "name": "Main gear wheels",
+      "canonical_name": "main gear wheels",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "d4dd436074e06138c6f42a6e",
+      "name": "wheels enter the wheel bay",
+      "canonical_name": "wheels enter the wheel bay",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "56fe0489f0e3ee1e1cc80d2d",
+      "name": "Nose gear wheels",
+      "canonical_name": "nose gear wheels",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "4d1c9dd841a0d472d7062e60",
+      "name": "rubbing strip (the brake band)",
+      "canonical_name": "rubbing strip (the brake band)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "106b32bd8c734333e041cd62",
+      "name": "Multifunctional runway light (MFRL)",
+      "canonical_name": "multifunctional runway light (mfrl)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "415a21e965460362eec687fc",
+      "name": "set of LED lights",
+      "canonical_name": "set of led lights",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "d10149eecff30f56d9478bcd",
+      "name": "aircraft",
+      "canonical_name": "aircraft",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "66ca151d117524f006784a27",
+      "name": "complete set of NLG lights",
+      "canonical_name": "complete set of nlg lights",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "8e7057c9cdf99d7ffea4e6a5",
+      "name": "two runway turn-off lights, one taxi light and one take-off light",
+      "canonical_name": "two runway turn-off lights, one taxi light and one take-off light",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "57fc07f99edb9d027c501d8c",
+      "name": "Auxiliary power unit (APU)",
+      "canonical_name": "auxiliary power unit (apu)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "2c284a2cc01d2efa503ba89f",
+      "name": "rear part of fuselage in the tail cone",
+      "canonical_name": "rear part of fuselage in the tail cone",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "d645c2cf0c4dfef7634c49ed",
+      "name": "Air intake system with flap-type door",
+      "canonical_name": "air intake system with flap-type door",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "ea23c1ef913d2f9f2585a729",
+      "name": "APU compartment",
+      "canonical_name": "apu compartment",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "72e64073024eb0fce0892508",
+      "name": "APU exhaust gases",
+      "canonical_name": "apu exhaust gases",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "6f3251bee762fa2a526f1279",
+      "name": "end of the fuselage cone",
+      "canonical_name": "end of the fuselage cone",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "3277654a52ca33c512c4f704",
+      "name": "Primary APU controls and indications",
+      "canonical_name": "primary apu controls and indications",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "192e5445a0f93afb333010af",
+      "name": "overhead panel, center pedestal and center instrument panel",
+      "canonical_name": "overhead panel, center pedestal and center instrument panel",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "86aad0ba75420300c0f00f76",
+      "name": "External APU panel",
+      "canonical_name": "external apu panel",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "24ab45083ed5460eae0c1e00",
+      "name": "APU emergency shutdown",
+      "canonical_name": "apu emergency shutdown",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "6c94d7e1a8622c9deddc556c",
+      "name": "IAE V2500 Series Engine",
+      "canonical_name": "iae v2500 series engine",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "9c2a3500b60e21d2f4c06e78",
+      "name": "5 m",
+      "canonical_name": "5 m",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "c2009e5f80de39a9f0108e37",
+      "name": "91.4 m (300 ft)",
+      "canonical_name": "91.4 m (300 ft)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "590d904b4611220f4c7b57d6",
+      "name": "30 degrees",
+      "canonical_name": "30 degrees",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "2ca6881cafaf8da776e76138",
+      "name": "CFM LEAP-1A Engine",
+      "canonical_name": "cfm leap-1a engine",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "ff7b21accdf9e40c5ca99054",
+      "name": "3.8 m",
+      "canonical_name": "3.8 m",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "126b2fc80663cf579ce434bb",
+      "name": "63.5 m (208 ft)",
+      "canonical_name": "63.5 m (208 ft)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "678e5f14b72df218c73547a8",
+      "name": "PW 1100G Engine",
+      "canonical_name": "pw 1100g engine",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "8e70aa22a2e5ef0cbb328413",
+      "name": "3.7 m",
+      "canonical_name": "3.7 m",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "bf2433e4f209f68f027ac9b4",
+      "name": "71.6 m (235 ft)",
+      "canonical_name": "71.6 m (235 ft)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "00eb5d5e6520d03875b6ad33",
+      "name": "CFM56 Series Engine",
+      "canonical_name": "cfm56 series engine",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "7c92ac5417679de6d8074629",
+      "name": "6.5 m",
+      "canonical_name": "6.5 m",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "3180aa0c4b565be8181495d3",
+      "name": "275 m (900 ft)",
+      "canonical_name": "275 m (900 ft)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "7e394587f19592b7b1b9fc37",
+      "name": "40 degrees",
+      "canonical_name": "40 degrees",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "8076445ec63ada7b3337f497",
+      "name": "5.18 m",
+      "canonical_name": "5.18 m",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "bec081b84abf68b8bdcdfd45",
+      "name": "348 m (1150 ft)",
+      "canonical_name": "348 m (1150 ft)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "8fa112ad61e7be12ad2c70a4",
+      "name": "10 m",
+      "canonical_name": "10 m",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "1cdd3200339c929a7d06611c",
+      "name": "220.7 m (724 ft)",
+      "canonical_name": "220.7 m (724 ft)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "b603b29d6f17b0c10248ae8c",
+      "name": "6.1 m",
+      "canonical_name": "6.1 m",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "8bea7e5f3199638dc02cf382",
+      "name": "243 m (797.4 ft)",
+      "canonical_name": "243 m (797.4 ft)",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "76001c24574ed6bde4ef9235",
+      "name": "wing and retract sideways towards the fuselage centerline",
+      "canonical_name": "wing and retract sideways towards the fuselage centerline",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "db8362c757b824c37eb95d35",
+      "name": "Landing Gear The nose landing gear",
+      "canonical_name": "landing gear the nose landing gear",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "7feca3bca2ee73e4352f2bc5",
+      "name": "leg with a built-in shock absorber strut",
+      "canonical_name": "leg with a built-in shock absorber strut",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "c3638e82ce22cad073f142f9",
+      "name": "MAINTENANCE PLANNING Steering",
+      "canonical_name": "maintenance planning steering",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "f011e7013ff5af5192eb42ff",
+      "name": "General The four main wheels",
+      "canonical_name": "general the four main wheels",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "f36b1ddce7239dcc3659d56b",
+      "name": "intake system with a flap-type door",
+      "canonical_name": "intake system with a flap-type door",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "031761276fba5d124356f1cd",
+      "name": "front of the APU compartment",
+      "canonical_name": "front of the apu compartment",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "5897f27368e5d72d3fe7eab1",
+      "name": "indications",
+      "canonical_name": "indications",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    },
+    {
+      "id": "fec56b60dd1285bc86047bc6",
+      "name": "overhead panel",
+      "canonical_name": "overhead panel",
+      "entity_types": [
+        "relation_endpoint"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "049cc06b17e7d4166b4a873e",
+      "target": "5a84a51ebbba02f028d2ede3",
+      "key": 0,
+      "predicate": "has_type",
+      "evidence": "The landing gear is of the conventional retractable tricycle type comprising:",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "049cc06b17e7d4166b4a873e",
+      "target": "018dcd14bbda2db026cd1a83",
+      "key": 0,
+      "predicate": "includes",
+      "evidence": "Two main gears with twin-wheel or four-wheel bogie assembly,",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "049cc06b17e7d4166b4a873e",
+      "target": "e3565c50170a5908200294b1",
+      "key": 0,
+      "predicate": "includes",
+      "evidence": "A twin-wheel nose gear.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "049cc06b17e7d4166b4a873e",
+      "target": "d4e3fc7b0477747da28f05c2",
+      "key": 0,
+      "predicate": "can_be_extended_by",
+      "evidence": "In abnormal operation, the landing gear can be extended by gravity.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "In abnormal operation",
+      "evidence_validated": true
+    },
+    {
+      "source": "f4fc29a00002f1533983eb3f",
+      "target": "c047caef95b4d3e8d7f74cbe",
+      "key": 0,
+      "predicate": "located_under",
+      "evidence": "The main landing gears are located under the wing and retract sideways towards the fuselage centerline.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "f4fc29a00002f1533983eb3f",
+      "target": "55c2bbadc5bbca3575a88d61",
+      "key": 0,
+      "predicate": "retract_sideways_toward",
+      "evidence": "The main landing gears are located under the wing and retract sideways towards the fuselage centerline.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "f4fc29a00002f1533983eb3f",
+      "target": "76001c24574ed6bde4ef9235",
+      "key": 0,
+      "predicate": "located_under",
+      "evidence": "The main landing gears are located under the wing and retract sideways towards the fuselage centerline.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "explicit_rule_v4",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "aa3189e827cd81cb2481e043",
+      "target": "3fb87ed585006b59c28f96f4",
+      "key": 0,
+      "predicate": "retracts_forward_into",
+      "evidence": "The nose landing gear retracts forward into a fuselage compartment located between FR9 and FR20.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "aa3189e827cd81cb2481e043",
+      "target": "3fb87ed585006b59c28f96f4",
+      "key": 1,
+      "predicate": "retracts_into",
+      "evidence": "The nose landing gear retracts forward into a fuselage compartment located between FR9 and FR20.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "explicit_rule_v4",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "aa3189e827cd81cb2481e043",
+      "target": "f92bfc236f39985a29448210",
+      "key": 0,
+      "predicate": "consists_of",
+      "evidence": "The nose landing gear consists of a leg with a built-in shock absorber strut, carrying twin wheels with adequate shimmy damping and a folding strut mechanically locked when in the DOWN position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "aa3189e827cd81cb2481e043",
+      "target": "59792d88c9a8f1de3093fab0",
+      "key": 0,
+      "predicate": "carries",
+      "evidence": "The nose landing gear consists of a leg with a built-in shock absorber strut, carrying twin wheels with adequate shimmy damping and a folding strut mechanically locked when in the DOWN position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "aa3189e827cd81cb2481e043",
+      "target": "78b183ddc37a34a3aa839bcb",
+      "key": 0,
+      "predicate": "includes",
+      "evidence": "The nose landing gear consists of a leg with a built-in shock absorber strut, carrying twin wheels with adequate shimmy damping and a folding strut mechanically locked when in the DOWN position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Mechanically locked when in the DOWN position",
+      "evidence_validated": true
+    },
+    {
+      "source": "5e0e0e2c91e18c2955684817",
+      "target": "6faca18e0d58a6d758fa7639",
+      "key": 0,
+      "predicate": "operated_and_controlled_by",
+      "evidence": "The landing gears and landing gear doors are operated and controlled electrically and hydraulically.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "2bab5eb5ee9afde22cd7b1b9",
+      "target": "0c403ed97d27639276af0eaf",
+      "key": 0,
+      "predicate": "consists_of",
+      "evidence": "Each of the two main landing gear assemblies consists of a conventional two-wheel direct type with an integral shock absorber supported in the fore and aft directions by a fixed drag strut and laterally by a folding strut mechanically locked when in the DOWN position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "f22247f0624b51c6ac59b61e",
+      "target": "7bc62af75b7bcb71169e9796",
+      "key": 0,
+      "predicate": "supported_fore_and_aft_by",
+      "evidence": "Each of the two main landing gear assemblies consists of a conventional two-wheel direct type with an integral shock absorber supported in the fore and aft directions by a fixed drag strut and laterally by a folding strut mechanically locked when in the DOWN position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "f22247f0624b51c6ac59b61e",
+      "target": "78b183ddc37a34a3aa839bcb",
+      "key": 0,
+      "predicate": "supported_laterally_by",
+      "evidence": "Each of the two main landing gear assemblies consists of a conventional two-wheel direct type with an integral shock absorber supported in the fore and aft directions by a fixed drag strut and laterally by a folding strut mechanically locked when in the DOWN position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Folding strut mechanically locked when in the DOWN position",
+      "evidence_validated": true
+    },
+    {
+      "source": "f968ac40df46babc61ab99cd",
+      "target": "a4902bc32a74bf1ca66cb35a",
+      "key": 0,
+      "predicate": "controlled_by",
+      "evidence": "Steering is controlled by two hand wheels in the cockpit.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "1b6a37ac03ce919cbf8b037b",
+      "target": "aa3189e827cd81cb2481e043",
+      "key": 0,
+      "predicate": "installed_on",
+      "evidence": "A steering disconnection box is installed on the nose landing gear to allow steering deactivation for towing purposes.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "1b6a37ac03ce919cbf8b037b",
+      "target": "56a46eff0eae1d4060852c0d",
+      "key": 0,
+      "predicate": "enables",
+      "evidence": "A steering disconnection box is installed on the nose landing gear to allow steering deactivation for towing purposes.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "86cd54d61872606dce549f6d",
+      "target": "cb14824b3017ecc25fa83a3c",
+      "key": 0,
+      "predicate": "filled_through",
+      "evidence": "Filling of the landing-gear shock absorbers is done through MIL-PRF-6164 standard valves.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "86cd54d61872606dce549f6d",
+      "target": "cb14824b3017ecc25fa83a3c",
+      "key": 1,
+      "predicate": "charged_through",
+      "evidence": "Charging of the landing-gear shock absorbers is accomplished with nitrogen through MIL-PRF-6164 standard valves.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "86cd54d61872606dce549f6d",
+      "target": "9159e7f170d8ac61900da448",
+      "key": 0,
+      "predicate": "charged_with",
+      "evidence": "Charging of the landing-gear shock absorbers is accomplished with nitrogen through MIL-PRF-6164 standard valves.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "b8ef331c9132ee35a481593f",
+      "target": "b3cf725398da94d5eea7611b",
+      "key": 0,
+      "predicate": "equipped_with",
+      "evidence": "The four main wheels are equipped with carbon multidisc brakes.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d6fa72d0af24d3ba0585978b",
+      "target": "fe4621cce8f28c5e664646f0",
+      "key": 0,
+      "predicate": "controlled_electrically",
+      "evidence": "The braking system is electrically controlled and hydraulically operated.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d6fa72d0af24d3ba0585978b",
+      "target": "7534f0bb32eb0a08d9c50f2c",
+      "key": 0,
+      "predicate": "operated_hydraulically",
+      "evidence": "The braking system is electrically controlled and hydraulically operated.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d6fa72d0af24d3ba0585978b",
+      "target": "11fffc23b6eef3cb40df389f",
+      "key": 0,
+      "predicate": "has_modes",
+      "evidence": "The braking system has four braking modes plus autobrake and anti-skid systems:",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d6fa72d0af24d3ba0585978b",
+      "target": "16f23598a83f13b7f2fb86f6",
+      "key": 0,
+      "predicate": "supports_mode",
+      "evidence": "Normal braking with anti-skid capability,",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d6fa72d0af24d3ba0585978b",
+      "target": "c65da0711f84af2ae1167558",
+      "key": 0,
+      "predicate": "supports_mode",
+      "evidence": "Alternative braking with anti-skid capability,",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d6fa72d0af24d3ba0585978b",
+      "target": "b11f2c5abf08c4ff703f1306",
+      "key": 0,
+      "predicate": "supports_mode",
+      "evidence": "Alternative braking without anti-skid capability,",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d6fa72d0af24d3ba0585978b",
+      "target": "b55a1a25120598a4084ab4f4",
+      "key": 0,
+      "predicate": "supports_mode",
+      "evidence": "Parking brake with full pressure application capability only.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "b5a6a7c522d00df77eb076e6",
+      "target": "d4dd436074e06138c6f42a6e",
+      "key": 0,
+      "predicate": "braked_automatically_before",
+      "evidence": "The main gear wheels are braked automatically before the wheels enter the wheel bay.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "56fe0489f0e3ee1e1cc80d2d",
+      "target": "4d1c9dd841a0d472d7062e60",
+      "key": 0,
+      "predicate": "stopped_by",
+      "evidence": "The nose gear wheels are stopped by the wheels contacting a rubbing strip (the brake band) when the gear is in the retracted position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "When the gear is in the retracted position",
+      "evidence_validated": true
+    },
+    {
+      "source": "106b32bd8c734333e041cd62",
+      "target": "415a21e965460362eec687fc",
+      "key": 0,
+      "predicate": "is",
+      "evidence": "The MFRL is a set of LED lights",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_106",
+      "page": 105,
+      "section": "2-10-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "106b32bd8c734333e041cd62",
+      "target": "d10149eecff30f56d9478bcd",
+      "key": 0,
+      "predicate": "installed_on",
+      "evidence": "installed on the aircraft",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_106",
+      "page": 105,
+      "section": "2-10-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "106b32bd8c734333e041cd62",
+      "target": "66ca151d117524f006784a27",
+      "key": 0,
+      "predicate": "includes",
+      "evidence": "the complete set of NLG lights",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_106",
+      "page": 105,
+      "section": "2-10-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "66ca151d117524f006784a27",
+      "target": "8e7057c9cdf99d7ffea4e6a5",
+      "key": 0,
+      "predicate": "includes",
+      "evidence": "two runway turn-off lights, one taxi light and one take-off light",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_106",
+      "page": 105,
+      "section": "2-10-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "57fc07f99edb9d027c501d8c",
+      "target": "2c284a2cc01d2efa503ba89f",
+      "key": 0,
+      "predicate": "installed_at",
+      "evidence": "The APU is installed at the rear part of the fuselage in the tail cone.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "d645c2cf0c4dfef7634c49ed",
+      "target": "ea23c1ef913d2f9f2585a729",
+      "key": 0,
+      "predicate": "installed_in_front_of",
+      "evidence": "An air intake system with a flap-type door is installed in front of the APU compartment.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "72e64073024eb0fce0892508",
+      "target": "6f3251bee762fa2a526f1279",
+      "key": 0,
+      "predicate": "pass_overboard_at",
+      "evidence": "The exhaust gases pass overboard at the end of the fuselage cone.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "3277654a52ca33c512c4f704",
+      "target": "192e5445a0f93afb333010af",
+      "key": 0,
+      "predicate": "installed_on",
+      "evidence": "The primary APU controls and indications are installed on the overhead panel, on the center pedestal and on the center instrument panel.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "86aad0ba75420300c0f00f76",
+      "target": "aa3189e827cd81cb2481e043",
+      "key": 0,
+      "predicate": "installed_on",
+      "evidence": "Additionally, an external APU panel is installed on the nose landing gear to initiate an APU emergency shutdown.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "86aad0ba75420300c0f00f76",
+      "target": "24ab45083ed5460eae0c1e00",
+      "key": 0,
+      "predicate": "initiates",
+      "evidence": "Additionally, an external APU panel is installed on the nose landing gear to initiate an APU emergency shutdown.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "6c94d7e1a8622c9deddc556c",
+      "target": "9c2a3500b60e21d2f4c06e78",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_radius",
+      "evidence": "R = 5 m",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_344",
+      "page": 342,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; value transcribed from the source figure. This is not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "6c94d7e1a8622c9deddc556c",
+      "target": "c2009e5f80de39a9f0108e37",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_distance_behind_CNA",
+      "evidence": "TO 91.4 m (300 ft) AFT OF COMMON NOZZLE ASSEMBLY (CNA) INCLUDES CROSS WIND EFFECT",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_344",
+      "page": 342,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; distance is shown aft of CNA and includes cross-wind effect.",
+      "evidence_validated": true
+    },
+    {
+      "source": "6c94d7e1a8622c9deddc556c",
+      "target": "590d904b4611220f4c7b57d6",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_angle",
+      "evidence": "30°",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_344",
+      "page": 342,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; angle label, not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "6c94d7e1a8622c9deddc556c",
+      "target": "8076445ec63ada7b3337f497",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_radius",
+      "evidence": "R = 5.18 m",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_349",
+      "page": 347,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; value transcribed from the source figure. This is not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "6c94d7e1a8622c9deddc556c",
+      "target": "bec081b84abf68b8bdcdfd45",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_distance_behind_CNA",
+      "evidence": "TO 348 m (1150 ft) AFT OF COMMON NOZZLE ASSEMBLY (CNA) INCLUDES CROSS WIND EFFECT",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_349",
+      "page": 347,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; distance is shown aft of CNA and includes cross-wind effect.",
+      "evidence_validated": true
+    },
+    {
+      "source": "2ca6881cafaf8da776e76138",
+      "target": "ff7b21accdf9e40c5ca99054",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_radius",
+      "evidence": "R = 3.8 m",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_345",
+      "page": 343,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; value transcribed from the source figure. This is not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "2ca6881cafaf8da776e76138",
+      "target": "126b2fc80663cf579ce434bb",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_distance_behind_CNA",
+      "evidence": "TO 63.5 m (208 ft) AFT OF COMMON NOZZLE ASSEMBLY (CNA) INCLUDES CROSS WIND EFFECT",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_345",
+      "page": 343,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; distance is shown aft of CNA and includes cross-wind effect.",
+      "evidence_validated": true
+    },
+    {
+      "source": "2ca6881cafaf8da776e76138",
+      "target": "590d904b4611220f4c7b57d6",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_angle",
+      "evidence": "30°",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_345",
+      "page": 343,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; angle label, not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "2ca6881cafaf8da776e76138",
+      "target": "8fa112ad61e7be12ad2c70a4",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_radius",
+      "evidence": "R = 10 m",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_350",
+      "page": 348,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; value transcribed from the source figure. This is not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "2ca6881cafaf8da776e76138",
+      "target": "1cdd3200339c929a7d06611c",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_distance_behind_CNA",
+      "evidence": "TO 220.7 m (724 ft) AFT OF COMMON NOZZLE ASSEMBLY (CNA) INCLUDES CROSS WIND EFFECT",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_350",
+      "page": 348,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; distance is shown aft of CNA and includes cross-wind effect.",
+      "evidence_validated": true
+    },
+    {
+      "source": "678e5f14b72df218c73547a8",
+      "target": "8e70aa22a2e5ef0cbb328413",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_radius",
+      "evidence": "R = 3.7 m",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_346",
+      "page": 344,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; value transcribed from the source figure. This is not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "678e5f14b72df218c73547a8",
+      "target": "bf2433e4f209f68f027ac9b4",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_distance_behind_CNA",
+      "evidence": "TO 71.6 m (235 ft) AFT OF COMMON NOZZLE ASSEMBLY (CNA) INCLUDES CROSS WIND EFFECT",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_346",
+      "page": 344,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; distance is shown aft of CNA and includes cross-wind effect.",
+      "evidence_validated": true
+    },
+    {
+      "source": "678e5f14b72df218c73547a8",
+      "target": "590d904b4611220f4c7b57d6",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_angle",
+      "evidence": "30°",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_346",
+      "page": 344,
+      "section": "6-3-2",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; angle label, not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "678e5f14b72df218c73547a8",
+      "target": "b603b29d6f17b0c10248ae8c",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_radius",
+      "evidence": "R = 6.1 m",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_351",
+      "page": 349,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; value transcribed from the source figure. This is not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "678e5f14b72df218c73547a8",
+      "target": "8bea7e5f3199638dc02cf382",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_distance_behind_CNA",
+      "evidence": "TO 243 m (797.4 ft) AFT OF COMMON NOZZLE ASSEMBLY (CNA) INCLUDES CROSS WIND EFFECT",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_351",
+      "page": 349,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; distance is shown aft of CNA and includes cross-wind effect.",
+      "evidence_validated": true
+    },
+    {
+      "source": "00eb5d5e6520d03875b6ad33",
+      "target": "7c92ac5417679de6d8074629",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_radius",
+      "evidence": "R = 6.5 m",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_348",
+      "page": 346,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; value transcribed from the source figure. This is not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "00eb5d5e6520d03875b6ad33",
+      "target": "3180aa0c4b565be8181495d3",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_distance_behind_CNA",
+      "evidence": "TO 275 m (900 ft) AFT OF COMMON NOZZLE ASSEMBLY (CNA) INCLUDES CROSS WIND EFFECT",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_348",
+      "page": 346,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; distance is shown aft of CNA and includes cross-wind effect.",
+      "evidence_validated": true
+    },
+    {
+      "source": "00eb5d5e6520d03875b6ad33",
+      "target": "7e394587f19592b7b1b9fc37",
+      "key": 0,
+      "predicate": "has_labeled_danger_area_angle",
+      "evidence": "40°",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_348",
+      "page": 346,
+      "section": "6-3-3",
+      "extraction_method": "curated_pdf_catalogue_v1",
+      "qualifier": "Diagram annotation; angle label, not a component relationship.",
+      "evidence_validated": true
+    },
+    {
+      "source": "db8362c757b824c37eb95d35",
+      "target": "7feca3bca2ee73e4352f2bc5",
+      "key": 0,
+      "predicate": "consists_of",
+      "evidence": "Nose Landing Gear The nose landing gear consists of a leg with a built-in shock absorber strut, carrying twin wheels with adequate shimmy damping and a folding strut mechanically locked when in the DOWN position.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_94",
+      "page": 93,
+      "section": "2-9-0",
+      "extraction_method": "explicit_rule_v4",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "c3638e82ce22cad073f142f9",
+      "target": "a4902bc32a74bf1ca66cb35a",
+      "key": 0,
+      "predicate": "controlled_by",
+      "evidence": "@A320 AIRCRAFT CHARACTERISTICS - AIRPORT AND MAINTENANCE PLANNING Steering is controlled by two hand wheels in the cockpit.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "explicit_rule_v4",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "f011e7013ff5af5192eb42ff",
+      "target": "b3cf725398da94d5eea7611b",
+      "key": 0,
+      "predicate": "equipped_with",
+      "evidence": "General The four main wheels are equipped with carbon multidisc brakes.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_95",
+      "page": 94,
+      "section": "2-9-0",
+      "extraction_method": "explicit_rule_v4",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "f36b1ddce7239dcc3659d56b",
+      "target": "031761276fba5d124356f1cd",
+      "key": 0,
+      "predicate": "located_in",
+      "evidence": "An air intake system with a flap-type door is installed in front of the APU compartment.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "explicit_rule_v4",
+      "qualifier": "",
+      "evidence_validated": true
+    },
+    {
+      "source": "5897f27368e5d72d3fe7eab1",
+      "target": "fec56b60dd1285bc86047bc6",
+      "key": 0,
+      "predicate": "installed_on",
+      "evidence": "Controls and Indication The primary APU controls and indications are installed on the overhead panel, on the center pedestal and on the center instrument panel.",
+      "document_id": "a320_ac_0624",
+      "aircraft_id": "a320",
+      "chunk_id": "AC_A320_0624_chunk_115",
+      "page": 114,
+      "section": "2-12-0",
+      "extraction_method": "explicit_rule_v4",
+      "qualifier": "",
+      "evidence_validated": true
+    }
+  ]
+}
