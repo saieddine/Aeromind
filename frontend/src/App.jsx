@@ -14,6 +14,8 @@ const [chatInput, setChatInput] = useState('')
 const [messages, setMessages] = useState([])
 const [chatHistory, setChatHistory] = useState([])
 const [activeChatId, setActiveChatId] = useState(null)
+const [isSending, setIsSending] = useState(false)
+const [chatMethod, setChatMethod] = useState('rag')
 
 const [showFullHistory, setShowFullHistory] = useState(false)
   const [isExplorerOpen, setIsExplorerOpen] = useState(false)
@@ -56,93 +58,133 @@ const [showFullHistory, setShowFullHistory] = useState(false)
   }
 
   const startNewChat = () => {
-  const newChat = {
-    id: Date.now(),
-    title: 'New chat',
-    messages: [],
-  }
+    const newChat = {
+      id: Date.now(),
+      title: 'New chat',
+      messages: [],
+    }
 
-  
-const sendMessage = (event) => {
-  event.preventDefault()
-
-  const text = chatInput.trim()
-  if (!text) return
-
-  let chatId = activeChatId
-  let updatedHistory = [...chatHistory]
-
-  if (chatId === null) {
-    chatId = Date.now()
-
-    updatedHistory = [
-      {
-        id: chatId,
-        title: text.length > 30 ? text.slice(0, 30) + '...' : text,
-        messages: [],
-      },
-      ...updatedHistory,
-    ]
-  }
-
-  const userMessage = {
-    role: 'user',
-    content: text,
-  }
-
-  const existingChat = updatedHistory.find(
-    (chat) => chat.id === chatId
-  )
-
-  const updatedMessages = [
-    ...(existingChat ? existingChat.messages : []),
-    userMessage,
-  ]
-
-  updatedHistory = updatedHistory.map((chat) =>
-    chat.id === chatId
-      ? {
-          ...chat,
-          title:
-            chat.title === 'New chat'
-              ? text.length > 30
-                ? text.slice(0, 30) + '...'
-                : text
-              : chat.title,
-          messages: updatedMessages,
-        }
-      : chat
-  )
-
-  setChatHistory(updatedHistory)
-  setActiveChatId(chatId)
-  setMessages(updatedMessages)
-  setChatInput('')
-}
-
-const deleteChat = (chatId) => {
-console.log('Deleting chat:', chatId)
-
-  const updatedHistory = chatHistory.filter(
-    (chat) => chat.id !== chatId
-  )
-
-  setChatHistory(updatedHistory)
-
-  if (activeChatId === chatId) {
-    setActiveChatId(null)
+    setChatHistory((previousChats) => [newChat, ...previousChats])
+    setActiveChatId(newChat.id)
     setMessages([])
     setChatInput('')
+    setIsSending(false)
+    setCurrentScreen('assistant')
   }
-}
 
+  const sendMessage = async (event) => {
+    event.preventDefault()
 
-  setChatHistory((previousChats) => [newChat, ...previousChats])
-  setActiveChatId(newChat.id)
-  setMessages([])
-  setChatInput('')
-  setCurrentScreen('assistant')
-}
+    const text = chatInput.trim()
+    if (!text || isSending) return
+
+    let chatId = activeChatId
+    let updatedHistory = [...chatHistory]
+
+    if (chatId === null || !updatedHistory.some((chat) => chat.id === chatId)) {
+      chatId = Date.now()
+      updatedHistory = [
+        {
+          id: chatId,
+          title: text.length > 30 ? `${text.slice(0, 30)}...` : text,
+          messages: [],
+        },
+        ...updatedHistory,
+      ]
+    }
+
+    const existingChat = updatedHistory.find((chat) => chat.id === chatId)
+    const userMessage = { role: 'user', content: text }
+    const updatedMessages = [...(existingChat?.messages || []), userMessage]
+
+    updatedHistory = updatedHistory.map((chat) =>
+      chat.id === chatId
+        ? {
+            ...chat,
+            title:
+              chat.title === 'New chat'
+                ? text.length > 30 ? `${text.slice(0, 30)}...` : text
+                : chat.title,
+            messages: updatedMessages,
+          }
+        : chat
+    )
+
+    if (!updatedHistory.some((chat) => chat.id === chatId)) {
+      updatedHistory.unshift({
+        id: chatId,
+        title: text.length > 30 ? `${text.slice(0, 30)}...` : text,
+        messages: updatedMessages,
+      })
+    }
+
+    setChatHistory(updatedHistory)
+    setActiveChatId(chatId)
+    setMessages(updatedMessages)
+    setChatInput('')
+    setIsSending(true)
+    setCurrentScreen('assistant')
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          aircraft_id: 'a320',
+          question: text,
+          conversation_id: String(chatId),
+          document_id: 'a320_ac_0624',
+          method: chatMethod,
+        }),
+      })
+
+      const payload = await response.json().catch(() => ({}))
+      if (!response.ok) {
+        const detail = typeof payload.detail === 'string'
+          ? payload.detail
+          : `The server returned HTTP ${response.status}.`
+        throw new Error(detail)
+      }
+
+      const assistantMessage = {
+        role: 'assistant',
+        content: payload.answer || 'The backend returned an empty answer.',
+        sources: Array.isArray(payload.sources) ? payload.sources : [],
+        metadata: payload.metadata || null,
+      }
+      const finalMessages = [...updatedMessages, assistantMessage]
+
+      setMessages(finalMessages)
+      setChatHistory((previousChats) => previousChats.map((chat) =>
+        chat.id === chatId ? { ...chat, messages: finalMessages } : chat
+      ))
+    } catch (error) {
+      const errorMessage = {
+        role: 'assistant',
+        content: `I couldn't reach the AeroMind backend. ${error.message || 'Check that FastAPI is running.'}`,
+        isError: true,
+        sources: [],
+      }
+      const finalMessages = [...updatedMessages, errorMessage]
+      setMessages(finalMessages)
+      setChatHistory((previousChats) => previousChats.map((chat) =>
+        chat.id === chatId ? { ...chat, messages: finalMessages } : chat
+      ))
+    } finally {
+      setIsSending(false)
+    }
+  }
+
+  const deleteChat = (chatId) => {
+    const updatedHistory = chatHistory.filter((chat) => chat.id !== chatId)
+    setChatHistory(updatedHistory)
+
+    if (activeChatId === chatId) {
+      setActiveChatId(null)
+      setMessages([])
+      setChatInput('')
+    }
+  }
 
 
 return (
@@ -510,80 +552,87 @@ return (
         <span className="chat-model-label">AEROMIND INTELLIGENCE</span>
       </header>
 
-      <div className="chat-home">
-        <div className="chat-home-heading">
-          <p className="eyebrow">AEROMIND / AIRBUS A320</p>
-          <h1>What would you like to know?</h1>
-          <p>
-            Ask about aircraft systems, engineering, or technical documentation.
-          </p>
+      {messages.length === 0 ? (
+        <div className="chat-home">
+          <div className="chat-home-heading">
+            <p className="eyebrow">AEROMIND / AIRBUS A320</p>
+            <h1>What would you like to know?</h1>
+            <p>Ask about aircraft systems, engineering, or technical documentation.</p>
+          </div>
+
+          <div className="chat-suggestions">
+            <button onClick={() => setChatInput('How does the A320 hydraulic system work?')}>
+              <span className="suggestion-icon">↗</span>
+              <span><strong>Hydraulic systems</strong><small>How does the A320 hydraulic system work?</small></span>
+            </button>
+            <button onClick={() => setChatInput('Explain the A320 flight control system.')}>
+              <span className="suggestion-icon">↗</span>
+              <span><strong>Flight controls</strong><small>How does the aircraft control its movement?</small></span>
+            </button>
+            <button onClick={() => setChatInput('Explain the A320 electrical system.')}>
+              <span className="suggestion-icon">↗</span>
+              <span><strong>Electrical systems</strong><small>How is electrical power distributed?</small></span>
+            </button>
+            <button onClick={() => setChatInput('What documents are available for the A320?')}>
+              <span className="suggestion-icon">↗</span>
+              <span><strong>Technical documents</strong><small>Find information in aircraft documentation.</small></span>
+            </button>
+          </div>
         </div>
-
-        <div className="chat-suggestions">
-          <button
-            onClick={() => setChatInput('How does the A320 hydraulic system work?')}
-          >
-            <span className="suggestion-icon">↗</span>
-            <span>
-              <strong>Hydraulic systems</strong>
-              <small>How does the A320 hydraulic system work?</small>
-            </span>
-          </button>
-
-          <button
-            onClick={() => setChatInput('Explain the A320 flight control system.')}
-          >
-            <span className="suggestion-icon">↗</span>
-            <span>
-              <strong>Flight controls</strong>
-              <small>How does the aircraft control its movement?</small>
-            </span>
-          </button>
-
-          <button
-            onClick={() => setChatInput('Explain the A320 electrical system.')}
-          >
-            <span className="suggestion-icon">↗</span>
-            <span>
-              <strong>Electrical systems</strong>
-              <small>How is electrical power distributed?</small>
-            </span>
-          </button>
-
-          <button
-            onClick={() => setChatInput('What documents are available for the A320?')}
-          >
-            <span className="suggestion-icon">↗</span>
-            <span>
-              <strong>Technical documents</strong>
-              <small>Find information in aircraft documentation.</small>
-            </span>
-          </button>
+      ) : (
+        <div className="chat-messages" aria-live="polite">
+          {messages.map((message, index) => (
+            <article className={`chat-message ${message.role} ${message.isError ? 'error' : ''}`} key={`${activeChatId}-${index}`}>
+              <div className="chat-message-role">{message.role === 'user' ? 'YOU' : 'AEROMIND'}</div>
+              <div className="chat-message-content">{message.content}</div>
+              {message.sources?.length > 0 && (
+                <details className="chat-sources">
+                  <summary>Sources ({message.sources.length})</summary>
+                  <ul>
+                    {message.sources.map((source, sourceIndex) => (
+                      <li key={`${source.chunk_id || source.document_id || 'source'}-${sourceIndex}`}>
+                        <strong>{source.title || source.document_id || 'Technical document'}</strong>
+                        {source.section ? ` · ${source.section}` : ''}
+                        {source.page !== null && source.page !== undefined ? ` · Page ${source.page}` : ''}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+              {message.metadata && (
+                <p className="chat-answer-metadata">
+                  Method: {message.metadata.method || chatMethod}
+                  {typeof message.metadata.latency_ms === 'number' ? ` · ${Math.round(message.metadata.latency_ms)} ms` : ''}
+                </p>
+              )}
+            </article>
+          ))}
+          {isSending && <div className="chat-loading" role="status">AeroMind is searching the aircraft knowledge base…</div>}
         </div>
-      </div>
-
+      )}
       <div className="chat-composer-area">
-        <form
-          className="chat-composer"
-          onSubmit={(event) => {
-            event.preventDefault()
-            if (!chatInput.trim()) return
-            alert('Your message is ready. We will connect the RAG backend next.')
-          }}
-        >
+        <form className="chat-composer" onSubmit={sendMessage}>
+          <select
+            className="chat-method-select"
+            aria-label="Choose answer method"
+            value={chatMethod}
+            onChange={(event) => setChatMethod(event.target.value)}
+            disabled={isSending}
+          >
+            <option value="rag">RAG</option>
+            <option value="lightrag">LightRAG</option>
+            <option value="graphrag">GraphRAG</option>
+          </select>
           <textarea
             value={chatInput}
             onChange={(event) => setChatInput(event.target.value)}
             placeholder="Ask anything about the Airbus A320..."
             aria-label="Message ASK THE AIRBUS"
             rows={1}
+            disabled={isSending}
           />
-          <button
-            type="submit"
-            disabled={!chatInput.trim()}
-            aria-label="Send message"
-          >
-            ↑
+          <button type="submit" disabled={!chatInput.trim() || isSending} aria-label="Send message">
+            {isSending ? '…' : '↑'}
           </button>
         </form>
         <p className="chat-composer-note">

@@ -1,7 +1,7 @@
 import asyncio
 import sys
 from pathlib import Path
-from rag_factory import get_rag
+from .rag_factory import get_rag
 
 BASE = Path(__file__).resolve().parent.parent  # Airbus folder
 

@@ -1,107 +1,206 @@
+
 import os
 import re
-import numpy as np
 from pathlib import Path
+
+import numpy as np
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
 
-
-BASE = Path(__file__).resolve().parent.parent
-
-# Load LightRAG-specific API configuration
-load_dotenv(Path(__file__).resolve().parent / ".env")
-
-STORAGE = BASE / "rag_storage"
-
-
-LLM_MODEL = os.getenv("LLM_MODEL")
-LLM_HOST = os.getenv("LLM_BINDING_HOST")
-LLM_KEY = os.getenv("LLM_BINDING_API_KEY")
-
-EMBED_MODEL = os.getenv("EMBEDDING_MODEL")
-EMBED_HOST = os.getenv("EMBEDDING_BINDING_HOST")
-EMBED_KEY = os.getenv("EMBEDDING_BINDING_API_KEY")
-EMBED_DIM = int(os.getenv("EMBEDDING_DIM", "1536"))
+from rag.ingestion.embedder_aeromind import generate_embedding
 
 from lightrag import LightRAG
 from lightrag.kg.shared_storage import initialize_pipeline_status
 from lightrag.utils import EmbeddingFunc
 
 
-async def llm_model_func(prompt, system_prompt=None, history_messages=None, **kwargs):
+# --------------------------------------------------
+# Project paths
+# --------------------------------------------------
+
+BASE = Path(__file__).resolve().parent.parent
+STORAGE = BASE / "rag_storage"
+
+# Reuse AeroMind's existing root .env
+load_dotenv(BASE / ".env")
+
+
+# --------------------------------------------------
+# OpenRouter configuration
+# --------------------------------------------------
+
+LLM_MODEL = os.getenv("OPENROUTER_MODEL")
+LLM_KEY = os.getenv("OPENROUTER_API_KEY")
+LLM_HOST = "https://openrouter.ai/api/v1"
+
+
+# --------------------------------------------------
+# Existing AeroMind embedding configuration
+# --------------------------------------------------
+
+EMBED_DIM = 384
+
+
+# --------------------------------------------------
+# LightRAG LLM function
+# --------------------------------------------------
+
+async def llm_model_func(
+    prompt,
+    system_prompt=None,
+    history_messages=None,
+    **kwargs,
+):
     messages = []
+
     if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
+        messages.append(
+            {
+                "role": "system",
+                "content": system_prompt,
+            }
+        )
+
     messages.extend(history_messages or [])
-    messages.append({"role": "user", "content": prompt})
+
+    messages.append(
+        {
+            "role": "user",
+            "content": prompt,
+        }
+    )
+
     async with AsyncOpenAI(
-        api_key=LLM_KEY, base_url=LLM_HOST, timeout=90, max_retries=5
+        api_key=LLM_KEY,
+        base_url=LLM_HOST,
+        timeout=90,
+        max_retries=3,
     ) as client:
+
         request_kwargs = {
             "model": LLM_MODEL,
             "messages": messages,
             "max_tokens": 2000,
             "stream": False,
         }
+
+        # Preserve structured-output requests from LightRAG.
         if kwargs.get("response_format") is not None:
-            request_kwargs["response_format"] = kwargs["response_format"]
-        resp = await client.chat.completions.create(**request_kwargs)
+            request_kwargs["response_format"] = kwargs[
+                "response_format"
+            ]
 
-    choices = getattr(resp, "choices", None)
-    if not choices:
-        # Some compatible providers return an error body with HTTP 200.
-        # Report only its code, never the raw response or credentials.
-        extra = getattr(resp, "model_extra", None) or {}
-        error = extra.get("error")
-        code = error.get("code") if isinstance(error, dict) else None
-        raise RuntimeError(
-            f"LightRAG LLM '{LLM_MODEL}' returned no completion choices "
-            f"(provider code: {code}). Check provider quota and model availability."
+        response = await client.chat.completions.create(
+            **request_kwargs
         )
 
-    choice = choices[0]
-    content = getattr(getattr(choice, "message", None), "content", None)
+    if not response.choices:
+        raise RuntimeError(
+            "OpenRouter returned no completion choices. "
+            f"Model={response.model!r}"
+        )
+
+    choice = response.choices[0]
+    content = choice.message.content
+
+    # Provide useful diagnostics instead of a generic error.
     if not isinstance(content, str) or not content.strip():
-        raise RuntimeError(
-            f"LightRAG LLM '{LLM_MODEL}' returned empty answer content "
-            f"(finish reason: {getattr(choice, 'finish_reason', None)}). "
-            "Check the provider response and model output limit."
+        reasoning = getattr(
+            choice.message,
+            "reasoning",
+            None,
         )
+
+        usage = response.usage
+        completion_tokens = (
+            getattr(usage, "completion_tokens", None)
+            if usage is not None
+            else None
+        )
+
+        raise RuntimeError(
+            "OpenRouter returned no usable text. "
+            f"Model={response.model!r}, "
+            f"finish_reason={choice.finish_reason!r}, "
+            f"reasoning_present={bool(reasoning)}, "
+            f"completion_tokens={completion_tokens!r}"
+        )
+
     return content
 
 
-async def embedding_func(texts: list[str]):
-    client = AsyncOpenAI(api_key=EMBED_KEY, base_url=EMBED_HOST, timeout=90, max_retries=5)
-    resp = await client.embeddings.create(model=EMBED_MODEL, input=texts)
-    return np.array([d.embedding for d in resp.data], dtype=np.float32)
+# --------------------------------------------------
+# AeroMind embedding function
+# --------------------------------------------------
 
+async def embedding_func(texts: list[str]):
+    # Reuse AeroMind's existing local BGE-small model.
+    vectors = [
+        generate_embedding(text)
+        for text in texts
+    ]
+
+    embeddings = np.asarray(
+        vectors,
+        dtype=np.float32,
+    )
+
+    if (
+        embeddings.ndim != 2
+        or embeddings.shape[1] != EMBED_DIM
+    ):
+        raise RuntimeError(
+            f"Expected embedding dimension {EMBED_DIM}, "
+            f"received shape {embeddings.shape}."
+        )
+
+    return embeddings
+
+
+# --------------------------------------------------
+# LightRAG instance factory
+# --------------------------------------------------
 
 async def get_rag(aircraft_id: str) -> LightRAG:
-    if not isinstance(aircraft_id, str) or not re.fullmatch(r"[a-z][a-z0-9_]*", aircraft_id):
-        raise ValueError("aircraft_id must be a canonical lowercase aircraft identifier.")
-    required = {
-        "LLM_MODEL": LLM_MODEL,
-        "LLM_BINDING_HOST": LLM_HOST,
-        "LLM_BINDING_API_KEY": LLM_KEY,
-        "EMBEDDING_MODEL": EMBED_MODEL,
-        "EMBEDDING_BINDING_HOST": EMBED_HOST,
-        "EMBEDDING_BINDING_API_KEY": EMBED_KEY,
-    }
-    missing = [name for name, value in required.items() if not value or not value.strip()]
-    if missing:
-        raise RuntimeError("Missing LightRAG configuration: " + ", ".join(missing))
-    if EMBED_DIM <= 0:
-        raise RuntimeError("EMBEDDING_DIM must be positive.")
+    if not isinstance(aircraft_id, str) or not re.fullmatch(
+        r"[a-z][a-z0-9_]*",
+        aircraft_id,
+    ):
+        raise ValueError(
+            "aircraft_id must be a canonical lowercase "
+            "aircraft identifier."
+        )
+
+    if not LLM_MODEL or not LLM_MODEL.strip():
+        raise RuntimeError(
+            "OPENROUTER_MODEL is missing from the "
+            "project root .env."
+        )
+
+    if not LLM_KEY or not LLM_KEY.strip():
+        raise RuntimeError(
+            "OPENROUTER_API_KEY is missing from the "
+            "project root .env."
+        )
+
+    aircraft_storage = STORAGE / aircraft_id
+    aircraft_storage.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
     rag = LightRAG(
-        working_dir=str(STORAGE / aircraft_id),
+        working_dir=str(aircraft_storage),
         llm_model_func=llm_model_func,
-        llm_model_max_async=1,       # lower concurrency = fewer simultaneous connections = more stable on flaky networks
+        llm_model_max_async=1,
         embedding_func=EmbeddingFunc(
             embedding_dim=EMBED_DIM,
-            max_token_size=8192,
+            max_token_size=512,
             func=embedding_func,
         ),
     )
+
     await rag.initialize_storages()
     await initialize_pipeline_status()
+
     return rag

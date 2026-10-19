@@ -29,18 +29,19 @@ async def chat(request: ChatRequest):
 
     try:
         if method == "lightrag":
-            # Import LightRAG only when requested.
-            from LighRag.lightrag_service import ask
+            # Use the backend service adapter for LightRAG.
+            from ..services.lightrag_service import answer_with_lightrag
 
-            result = await ask(
+            result = await answer_with_lightrag(
                 aircraft_id=request.aircraft_id,
                 question=request.question,
-                conversation_id=request.conversation_id or "",
-                mode="hybrid",
+                document_id=request.document_id,
+                conversation_id=request.conversation_id,
+                conversation_history=[],
             )
 
         elif method == "graphrag":
-            # Import GraphRAG only when requested.
+            # Preserve the existing GraphRAG implementation.
             from ..services.graphrag_service import answer_with_graphrag
 
             result = await run_in_threadpool(
@@ -53,7 +54,7 @@ async def chat(request: ChatRequest):
             )
 
         else:
-            # Preserve the existing normal RAG implementation.
+            # Preserve the existing standard RAG implementation.
             from ..services.rag_service import get_rag_service
 
             service = get_rag_service()
