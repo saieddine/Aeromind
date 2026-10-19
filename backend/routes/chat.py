@@ -6,7 +6,6 @@ from fastapi.concurrency import run_in_threadpool
 
 from ..schemas.chat import ChatRequest, ChatResponse
 
-
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api", tags=["chat"])
@@ -14,7 +13,7 @@ router = APIRouter(prefix="/api", tags=["chat"])
 
 @router.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
-    method = request.method.lower().strip()
+    method = (request.method or "rag").strip().lower()
 
     if not request.question.strip():
         raise HTTPException(
@@ -25,18 +24,12 @@ async def chat(request: ChatRequest):
     if method not in {"rag", "lightrag", "graphrag"}:
         raise HTTPException(
             status_code=400,
-            detail="Unsupported RAG method.",
-        )
-
-    if method == "graphrag":
-        raise HTTPException(
-            status_code=501,
-            detail="GraphRAG is not available yet.",
+            detail="Unsupported RAG method. Use 'rag', 'lightrag', or 'graphrag'.",
         )
 
     try:
         if method == "lightrag":
-            # Import only when LightRAG is requested.
+            # Import LightRAG only when requested.
             from LighRag.lightrag_service import ask
 
             result = await ask(
@@ -46,8 +39,21 @@ async def chat(request: ChatRequest):
                 mode="hybrid",
             )
 
+        elif method == "graphrag":
+            # Import GraphRAG only when requested.
+            from ..services.graphrag_service import answer_with_graphrag
+
+            result = await run_in_threadpool(
+                answer_with_graphrag,
+                aircraft_id=request.aircraft_id,
+                question=request.question,
+                document_id=request.document_id,
+                conversation_id=request.conversation_id,
+                conversation_history=[],
+            )
+
         else:
-            # Preserve Seif's existing normal RAG implementation.
+            # Preserve the existing normal RAG implementation.
             from ..services.rag_service import get_rag_service
 
             service = get_rag_service()
@@ -70,12 +76,19 @@ async def chat(request: ChatRequest):
     except ValueError as exc:
         raise HTTPException(
             status_code=400,
-            detail="Invalid chat request.",
+            detail=str(exc),
         ) from exc
 
-    except Exception:
-        logger.exception("Chat request failed")
+    except FileNotFoundError as exc:
+        logger.exception("Required file missing for %s", method)
+        raise HTTPException(
+            status_code=503,
+            detail="The requested chat service is not fully configured.",
+        ) from exc
+
+    except Exception as exc:
+        logger.exception("%s request failed", method.upper())
         raise HTTPException(
             status_code=500,
             detail="The chat service encountered an error.",
-        )
+        ) from exc
